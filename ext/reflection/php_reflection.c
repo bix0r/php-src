@@ -950,6 +950,10 @@ static void _extension_ini_string(zend_ini_entry *ini_entry, smart_str *str, cha
 			}
 			if (ini_entry->modifiable & ZEND_INI_SYSTEM) {
 				smart_str_append_printf(str, "%sSYSTEM", comma);
+				comma = ",";
+			}
+			if (ini_entry->modifiable & ZEND_INI_ADMIN) {
+				smart_str_append_printf(str, "%sADMIN", comma);
 			}
 		}
 

@@ -122,7 +122,7 @@ static int fpm_php_apply_defines(struct fpm_worker_pool_s *wp) /* {{{ */
 	}
 
 	for (kv = wp->config->php_admin_values; kv; kv = kv->next) {
-		if (fpm_php_apply_defines_ex(kv, ZEND_INI_SYSTEM) == -1) {
+		if (fpm_php_apply_defines_ex(kv, ZEND_INI_ADMIN) == -1) {
 			zlog(ZLOG_ERROR, "Unable to set php_admin_value '%s'", kv->key);
 		}
 	}

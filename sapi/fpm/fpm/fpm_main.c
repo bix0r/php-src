@@ -1326,7 +1326,7 @@ static void init_request_info(void)
 
 	ini = FCGI_GETENV(request, "PHP_ADMIN_VALUE");
 	if (ini) {
-		int mode = ZEND_INI_SYSTEM;
+		int mode = ZEND_INI_ADMIN;
 		char *tmp;
 		spprintf(&tmp, 0, "%s\n", ini);
 		zend_parse_ini_string(tmp, 1, ZEND_INI_SCANNER_NORMAL, (zend_ini_parser_cb_t)fastcgi_ini_parser, &mode);
